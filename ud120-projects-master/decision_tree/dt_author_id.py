@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+#DECISION TREE FOLDER
+
 """ 
     This is the code to accompany the Lesson 3 (decision tree) mini-project.
 
@@ -12,6 +14,8 @@ import sys
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
+from sklearn import tree
+from sklearn.metrics import accuracy_score
 
 
 ### features_train and features_test are the features for the training
@@ -19,13 +23,11 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
+clf = tree.DecisionTreeClassifier()
+clf.fit(features_train, labels_train)
 
+clf.predict(features_test)
 
-
-#########################################################
-### your code goes here ###
-
-
-#########################################################
-
-
+pred = accuracy_score(pred, labels_test)
+print('Accuracy: ')
+print(pred)
