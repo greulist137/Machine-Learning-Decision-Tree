@@ -32,5 +32,8 @@ score = accuracy_score(pred, labels_test)
 print('Accuracy: ')
 print(score)
 
+print('Number of features:')
+print( len(features_train[0]))
+
 
 
